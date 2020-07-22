@@ -26,6 +26,7 @@ public class MainActivity extends AppCompatActivity {
       public void onClick(View view) {
         final Intent i = new Intent();
         i.putExtra("dato", !TextUtils.isEmpty(((EditText) findViewById(R.id.edittext)).getText()) ? ((EditText) findViewById(R.id.edittext)).getText().toString() : "");
+        /* Al cambiar el action a sidemu.denuncias.<nombre_broadcast> (el id de nuestra app) solo es posible recibirla en dicha app */
         i.setAction("pruebas.broadcast");
         i.addFlags(Intent.FLAG_INCLUDE_STOPPED_PACKAGES);
         MainActivity.this.sendBroadcast(i);
